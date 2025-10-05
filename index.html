@@ -1,67 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andri Yano - GitHub Snake</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andri Yano - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: white;
+    /* ========== GLOBAL ========== */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* ========== HEADER ========== */
     header {
-      padding: 2rem 1rem;
+      padding: 5rem 1rem 3rem;
+      position: relative;
+      overflow: hidden;
     }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: #00ffcc44;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: float 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(40px); }
+    }
+
     h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
-    }
-    p {
-      font-size: 1.2rem;
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00ffcc, #00bfff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
+      letter-spacing: 1px;
+      animation: fadeInDown 1.2s ease;
     }
-    .snake-container {
-      margin: 2rem 0;
+
+    #typing {
+      font-size: 1.1rem;
+      color: #ddd;
+      min-height: 30px;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1.2s ease;
     }
-    img {
-      width: 80%;
-      max-width: 700px;
-      border: 3px solid white;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+
+    /* ========== MAIN ========== */
+    section {
+      padding: 3rem 1rem;
+      animation: fadeIn 1.5s ease;
     }
-    footer {
-      margin-top: 2rem;
-      padding: 1rem;
-      font-size: 0.9rem;
+
+    .card {
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 750px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,255,204,0.1);
+      backdrop-filter: blur(8px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    a {
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(0,255,204,0.3);
+    }
+
+    .card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
       color: #00ffcc;
+      text-shadow: 0 0 10px rgba(0,255,204,0.4);
+    }
+
+    img {
+      width: 85%;
+      max-width: 600px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.2);
+      box-shadow: 0 0 20px rgba(0,255,204,0.2);
+      transition: all 0.4s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(0,255,204,0.6);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(6px);
+    }
+
+    footer a {
+      color: #00ffcc;
+      font-weight: 600;
+      margin: 0 10px;
       text-decoration: none;
-      font-weight: bold;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff;
+    }
+
+    footer p {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== SCROLLBAR ========== */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(#00ffcc, #00bfff);
+      border-radius: 10px;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .card { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>👋 Hi, I'm Andri Yano</h1>
-    <p>Web Developer | Data Enthusiast | Mobile Apps Builder</p>
+    <div id="typing"></div>
   </header>
 
-  <div class="snake-container">
-    <h2>🐍 My GitHub Contribution Snake</h2>
-    <img src="snake.svg" alt="GitHub Snake Animation">
-  </div>
+  <section>
+    <div class="card">
+      <h2>🐍 My GitHub Contribution Snake</h2>
+      <img src="snake.svg" alt="GitHub Snake Animation">
+    </div>
+  </section>
 
   <footer>
-    <p>
-      🌐 <a href="https://github.com/andriyanooo" target="_blank">GitHub</a> | 
+    <div>
+      🌐 <a href="https://github.com/andriyanooo" target="_blank">GitHub</a> |
       📷 <a href="https://instagram.com/username" target="_blank">Instagram</a>
-    </p>
+    </div>
+    <p>✨ Designed & Coded with 💙 by Andri Yano</p>
   </footer>
+
+  <script>
+    // Efek typing di bagian deskripsi
+    const text = ["Web Developer 💻", "Data Enthusiast 📊", "Mobile Apps Builder 📱", "AI Learner 🤖"];
+    let i = 0, j = 0, currentText = "", isDeleting = false;
+    const speed = 120;
+    const typingEl = document.getElementById("typing");
+
+    function type() {
+      currentText = text[i];
+      typingEl.textContent = currentText.substring(0, j);
+
+      if (!isDeleting && j < currentText.length) {
+        j++;
+      } else if (isDeleting && j > 0) {
+        j--;
+      } else if (!isDeleting && j === currentText.length) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+      } else {
+        isDeleting = false;
+        i = (i + 1) % text.length;
+      }
+      setTimeout(type, isDeleting ? speed / 2 : speed);
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+  </script>
 </body>
 </html>
