@@ -1,224 +1,207 @@
-<!-- update revisi terbaru 10/05/2025 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andri Yano - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andri Yano | Developer Portfolio</title>
   <style>
-    /* ========== GLOBAL ========== */
+    /* ====== RESET & BASE ====== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    body {
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
-      color: #fff;
-      text-align: center;
+    }
+    html, body {
+      height: 100%;
       overflow-x: hidden;
-      scroll-behavior: smooth;
+      color: #fff;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f1c2c);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
     }
 
-    /* ========== HEADER ========== */
-    header {
-      padding: 5rem 1rem 3rem;
-      position: relative;
-      overflow: hidden;
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 300px;
-      height: 300px;
-      background: #00ffcc44;
-      border-radius: 50%;
-      filter: blur(100px);
-      animation: float 6s ease-in-out infinite alternate;
-    }
-
-    @keyframes float {
-      from { transform: translateY(0); }
-      to { transform: translateY(40px); }
+    /* ====== CONTAINER ====== */
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
     h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, #00ffcc, #00bfff);
-    background-clip: text;
-    -webkit-background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-      animation: fadeInDown 1.2s ease;
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
     }
 
-    #typing {
-      font-size: 1.1rem;
-      color: #ddd;
-      min-height: 30px;
-      margin-bottom: 2rem;
-      animation: fadeInUp 1.2s ease;
+    h2 {
+      font-size: 1.5em;
+      color: #ffd700;
+      margin-bottom: 20px;
     }
 
-    /* ========== MAIN ========== */
-    section {
-      padding: 3rem 1rem;
-      animation: fadeIn 1.5s ease;
+    .typed-text {
+      border-right: 3px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* ====== BUTTONS ====== */
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #00c6ff;
+    }
+
+    /* ====== SOCIAL ICONS ====== */
+    .socials {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .socials a {
+      font-size: 1.5em;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #00ffff;
+      transform: scale(1.2);
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+
+    /* ====== PROJECT SECTION ====== */
+    .projects {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1000px;
     }
 
     .card {
-      margin: 2rem auto;
-      padding: 2rem;
-      max-width: 750px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0,255,204,0.1);
-      backdrop-filter: blur(8px);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      transition: 0.4s;
+      backdrop-filter: blur(5px);
     }
 
     .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 40px rgba(0,255,204,0.3);
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0,255,255,0.4);
     }
 
-    .card h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-      color: #00ffcc;
-      text-shadow: 0 0 10px rgba(0,255,204,0.4);
-    }
-
-    img {
-      width: 85%;
-      max-width: 600px;
-      border-radius: 12px;
-      border: 2px solid rgba(255,255,255,0.2);
-      box-shadow: 0 0 20px rgba(0,255,204,0.2);
-      transition: all 0.4s ease;
-    }
-
-    img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 35px rgba(0,255,204,0.6);
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      margin-top: 3rem;
-      padding: 1rem;
-      background: rgba(255,255,255,0.03);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(6px);
-    }
-
-    footer a {
-      color: #00ffcc;
-      font-weight: 600;
-      margin: 0 10px;
-      text-decoration: none;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    footer a:hover {
-      color: #00bfff;
-      text-shadow: 0 0 10px #00bfff;
-    }
-
-    footer p {
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    /* ========== ANIMATIONS ========== */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ========== SCROLLBAR ========== */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(#00ffcc, #00bfff);
-      border-radius: 10px;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      .card { padding: 1.5rem; }
+    .card h3 {
+      color: #00ffff;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>👋 Hi, I'm Andri Yano</h1>
-    <div id="typing"></div>
-  </header>
 
-  <section>
+  <div class="container">
+    <h1>👋 Halo, Saya Andri Yano</h1>
+    <h2><span class="typed-text"></span></h2>
+
+    <div class="buttons">
+      <button class="btn" onclick="window.open('https://github.com/andriyanooo','_blank')">GitHub</button>
+      <button class="btn" onclick="window.open('mailto:andri.yano@example.com')">Kontak</button>
+      <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Lihat Proyek</button>
+    </div>
+
+    <div class="socials">
+      <a href="https://github.com/andriyanooo">🐙</a>
+      <a href="https://linkedin.com">💼</a>
+      <a href="https://twitter.com">🐦</a>
+    </div>
+  </div>
+
+  <section id="projects" class="projects">
     <div class="card">
-      <h2>🐍 My GitHub Contribution Snake</h2>
-      <img src="snake.svg" alt="GitHub Snake Animation">
+      <h3>🌍 Sistem Informasi Kegiatan Penerangan Hukum</h3>
+      <p>Website Kejaksaan Tinggi Jambi yang menampilkan kegiatan hukum dan sistem upload undangan digital.</p>
+    </div>
+
+    <div class="card">
+      <h3>📊 Clusterisasi Wilayah Rawan Gempa</h3>
+      <p>Analisis data gempa Indonesia 2008–2023 menggunakan algoritma K-Means dan visualisasi Streamlit.</p>
+    </div>
+
+    <div class="card">
+      <h3>⚙️ Prediksi Beban Puncak Listrik</h3>
+      <p>Implementasi model Machine Learning untuk prediksi beban puncak harian (Random Forest, Linear, ARIMA).</p>
     </div>
   </section>
 
-  <footer>
-    <div>
-      🌐 <a href="https://github.com/andriyanooo" target="_blank">GitHub</a> |
-      📷 <a href="https://instagram.com/username" target="_blank">Instagram</a>
-    </div>
-    <p>✨ Designed & Coded with 💙 by Andri Yano</p>
-  </footer>
+  <footer>© 2025 Andri Yano — Dibangun dengan 💻 & Semangat</footer>
 
   <script>
-    // Efek typing di bagian deskripsi
-    const text = ["Web Developer 💻", "Data Enthusiast 📊", "Mobile Apps Builder 📱", "AI Learner 🤖"];
-    let i = 0, j = 0, currentText = "", isDeleting = false;
-    const speed = 120;
-    const typingEl = document.getElementById("typing");
-
-    function type() {
-      currentText = text[i];
-      typingEl.textContent = currentText.substring(0, j);
-
-      if (!isDeleting && j < currentText.length) {
-        j++;
-      } else if (isDeleting && j > 0) {
-        j--;
-      } else if (!isDeleting && j === currentText.length) {
-        isDeleting = true;
-        setTimeout(type, 1000);
-        return;
-      } else {
-        isDeleting = false;
-        i = (i + 1) % text.length;
+    const text = "Web Developer | Data Enthusiast | Future Tech Billionaire 💡";
+    let index = 0;
+    function typeEffect() {
+      if (index < text.length) {
+        document.querySelector('.typed-text').textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 80);
       }
-      setTimeout(type, isDeleting ? speed / 2 : speed);
     }
-
-    document.addEventListener("DOMContentLoaded", type);
+    window.onload = typeEffect;
   </script>
+
 </body>
 </html>
