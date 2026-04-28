@@ -11,18 +11,22 @@
 ---
 
 ## 🚀 About Me  
-- 🎓 Final-year Informatics Student  
-- 📊 Fokus: **Clustering Gempa (K-Means)**  
-- 💻 Web Developer (Laravel + JavaScript)  
-- 🧠 Belajar: Data Science & AI  
-- 💰 Goal: Financial Freedom & Tech Business  
+- 💻 Passionate **Web Developer** who loves building modern and impactful applications  
+- ⚡ Strong interest in **Data, Technology, and Digital Innovation**   
+- 🧠 Continuous learner exploring **AI, Data Science, and emerging technologies**  
+- 🚀 Focused on growth, consistency, and long-term skill mastery  
+- 🌍 Open to collaboration, freelance projects, and real-world problem solving  
+- 💡 Interested in creating solutions that combine **technology + real impact**  
+- 📈 Always improving — both in **technical skills and mindset**  
+- 💰 Building a path toward **financial freedom through tech**  
 
 ---
 
-## 🧠 Current Focus  
-- 📍 Clustering wilayah rawan gempa Indonesia  
-- 📊 Visualisasi data dengan Python & Streamlit  
-- 🌐 Membangun web app berbasis data  
+## 🧠 Mindset
+- 🧩 Solve problems, not just write code  
+- 📚 Learn → Build → Improve → Repeat  
+- ⚔️ Discipline beats motivation  
+- 🌱 Small progress every day = big results  
 
 ---
 
