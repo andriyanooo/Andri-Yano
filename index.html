@@ -3,205 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andri Yano | Developer Portfolio</title>
+  <title>Andri Yano | Developer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* ====== RESET & BASE ====== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
-    html, body {
-      height: 100%;
-      overflow-x: hidden;
+
+    body {
+      background: #0a0a0a;
       color: #fff;
-      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f1c2c);
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
     }
 
-    @keyframes gradientMove {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    /* ====== CONTAINER ====== */
-    .container {
+    /* HERO */
+    .hero {
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
       padding: 20px;
     }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
+    .hero h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
 
-    h2 {
-      font-size: 1.5em;
-      color: #ffd700;
-      margin-bottom: 20px;
+    .hero p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #aaa;
+      max-width: 500px;
     }
 
-    .typed-text {
-      border-right: 3px solid #fff;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    /* ====== BUTTONS ====== */
-    .buttons {
-      margin-top: 30px;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
+    /* BUTTON */
     .btn {
-      padding: 12px 25px;
-      border: none;
+      margin-top: 30px;
+      padding: 12px 28px;
       border-radius: 30px;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
-      color: white;
-      font-size: 1em;
+      border: 1px solid #00ffff;
+      color: #00ffff;
+      background: transparent;
       cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px #00c6ff;
-    }
-
-    /* ====== SOCIAL ICONS ====== */
-    .socials {
-      margin-top: 40px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .socials a {
-      font-size: 1.5em;
-      color: #fff;
-      text-decoration: none;
       transition: 0.3s;
     }
 
-    .socials a:hover {
-      color: #00ffff;
-      transform: scale(1.2);
+    .btn:hover {
+      background: #00ffff;
+      color: #000;
+      box-shadow: 0 0 20px #00ffff;
     }
 
-    /* ====== FOOTER ====== */
-    footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
+    /* SECTION */
+    .section {
+      padding: 80px 20px;
       text-align: center;
-      font-size: 0.9em;
-      opacity: 0.8;
+      max-width: 800px;
+      margin: auto;
     }
 
-    /* ====== PROJECT SECTION ====== */
-    .projects {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      width: 90%;
-      max-width: 1000px;
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
-    .card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 20px;
-      transition: 0.4s;
-      backdrop-filter: blur(5px);
+    .section p {
+      color: #aaa;
+      line-height: 1.6;
     }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(0,255,255,0.4);
+    /* TECH */
+    .tech {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
     }
 
-    .card h3 {
+    .tech span {
+      border: 1px solid #333;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .tech span:hover {
+      border-color: #00ffff;
       color: #00ffff;
-      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #777;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>👋 Halo, Saya Andri Yano</h1>
-    <h2><span class="typed-text"></span></h2>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>ANDRI YANO</h1>
+    <p>
+      A developer focused on building clean, functional, and meaningful digital solutions.
+    </p>
 
-    <div class="buttons">
-      <button class="btn" onclick="window.open('https://github.com/andriyanooo','_blank')">GitHub</button>
-      <button class="btn" onclick="window.open('mailto:andri.yano@example.com')">Kontak</button>
-      <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Lihat Proyek</button>
-    </div>
+    <button class="btn" onclick="window.open('https://github.com/andriyanooo')">
+      View GitHub
+    </button>
+  </section>
 
-    <div class="socials">
-      <a href="https://github.com/andriyanooo">🐙</a>
-      <a href="https://linkedin.com">💼</a>
-      <a href="https://twitter.com">🐦</a>
-    </div>
-  </div>
+  <!-- ABOUT -->
+  <section class="section">
+    <h2>About</h2>
+    <p>
+      Passionate about technology and continuous improvement.  
+      I enjoy learning new things, solving problems, and building systems that create real impact.  
+      Focused on growth, discipline, and long-term mastery in the world of software development.
+    </p>
+  </section>
 
-  <section id="projects" class="projects">
-    <div class="card">
-      <h3>🌍 Sistem Informasi Kegiatan Penerangan Hukum</h3>
-      <p>Website Kejaksaan Tinggi Jambi yang menampilkan kegiatan hukum dan sistem upload undangan digital.</p>
-    </div>
-
-    <div class="card">
-      <h3>📊 Clusterisasi Wilayah Rawan Gempa</h3>
-      <p>Analisis data gempa Indonesia 2008–2023 menggunakan algoritma K-Means dan visualisasi Streamlit.</p>
-    </div>
-
-    <div class="card">
-      <h3>⚙️ Prediksi Beban Puncak Listrik</h3>
-      <p>Implementasi model Machine Learning untuk prediksi beban puncak harian (Random Forest, Linear, ARIMA).</p>
+  <!-- TECH -->
+  <section class="section">
+    <h2>Tech Stack</h2>
+    <div class="tech">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Laravel</span>
+      <span>Python</span>
+      <span>MySQL</span>
+      <span>PHP</span>
+      <span>Figma</span>
+      <span>Git</span>
     </div>
   </section>
 
-  <footer>© 2025 Andri Yano — Dibangun dengan 💻 & Semangat</footer>
-
-  <script>
-    const text = "Web Developer | Data Enthusiast | Future Tech Billionaire 💡";
-    let index = 0;
-    function typeEffect() {
-      if (index < text.length) {
-        document.querySelector('.typed-text').textContent += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 80);
-      }
-    }
-    window.onload = typeEffect;
-  </script>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Andri Yano — Keep building, keep growing
+  </footer>
 
 </body>
 </html>
